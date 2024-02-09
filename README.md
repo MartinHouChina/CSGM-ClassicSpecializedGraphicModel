@@ -12,5 +12,4 @@
 
 ## Cautions
 - Ensure that your python version matches.
-
-## QuickStart
+- It is recommended to train and validate with your GPU.
