@@ -86,6 +86,8 @@ class MobileNetSmall(nn.Module):
         lastconv_input_c = bneck_conf(96, 5, 576, 96, True, 'HS', 1).out_c
         lastconv_output_c = 6 * lastconv_input_c
 
+
+        # 我在这里摸了一会🐟
         self.Conv2d_1x1 = ConvBNActivation(lastconv_input_c,
                                            lastconv_output_c,
                                            kernel_size=1,
@@ -94,6 +96,7 @@ class MobileNetSmall(nn.Module):
 
         self.Pooling = nn.AdaptiveAvgPool2d(1)
 
+        # 我在这里水了三行代码
         last_channel = adjust_channels(1024)
 
         self.classifier = nn.Sequential(nn.Linear(lastconv_output_c, last_channel),
