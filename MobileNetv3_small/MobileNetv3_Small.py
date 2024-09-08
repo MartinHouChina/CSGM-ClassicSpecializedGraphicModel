@@ -32,6 +32,7 @@ class MobileNetSmall(nn.Module):
             bneck_conf(16, 3, 16, 16, True, 'RE', 2),
             norm_layer
         )
+        # 这里漏加了一杠
         # 随便改一改
         self.bneck_3x3_B = InvertedResidual(
             bneck_conf(16, 3, 72, 24, False, 'RE', 2),
